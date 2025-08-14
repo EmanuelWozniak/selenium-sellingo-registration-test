@@ -50,12 +50,6 @@ public class RegistrationPage {
         return this;
     }
 
-    /** Zaznacza checkbox akceptacji regulaminu:
-     *  1) klik w checkmark (większy hitbox),
-     *  2) klik w cały label (kontener),
-     *  3) awaryjnie JS: ustaw .checked + wyślij 'input'/'change' + kliknij checkmark eventami myszy.
-     *  Na koniec twardo czekamy aż WebElement.isSelected() == true.
-     */
     public RegistrationPage acceptTerms() {
         try {
             dismissCookieBannerIfPresent();
@@ -143,8 +137,6 @@ public class RegistrationPage {
             return false;
         }
     }
-
-    // ===== helpers =====
 
     private void waitForPageReady() {
         ExpectedCondition<Boolean> jsLoad = wd ->
